@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Projeto BD - Início</title>
 
 </head>
@@ -15,11 +15,11 @@
     <div id="container">
         <div id="header-container">
             <header>
-                <a href="index.php" class="a-limpo" id="logo"><h1>LOGO</h1></a>
+                <a href="index.php" class="a-limpo" id="logo"><h1>Projeto-BD</h1></a>
     
                 <div id="barra-de-pesquisa">
-                    <input type="text" placeholder="Pesquisar Produto" class="input-limpo" id="input-busca">
-                    <button onclick="buscar()"><i class="fas fa-search"></i></button>
+                    <input type="text" placeholder="Pesquisar Produto" class="input-limpo" id="input-busca" disabled>
+                    <button onclick="buscar()" disabled><i class="fas fa-search"></i></button>
                 </div>
     
                 <a href="cadastrar_produto.php" class="a-decorado">Cadastrar Produto</a>
@@ -44,6 +44,6 @@
         </div>
     </div>
     
-    <script src="JS/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

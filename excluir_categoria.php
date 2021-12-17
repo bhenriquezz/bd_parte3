@@ -1,4 +1,5 @@
 <<?php
+    
     include_once "conexao.php";
 
     $idCategoria = intval($_POST['id']);

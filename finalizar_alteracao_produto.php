@@ -1,4 +1,5 @@
 <?php
+    ini_set('default_charset', 'UTF-8');
     include_once "conexao.php";
     $queryString = explode('?', $_SERVER["HTTP_REFERER"]);
     $idProduto = explode('=', $queryString[1]);
@@ -10,8 +11,8 @@
     for($i = 0; $i < count($queryString); $i++) {
         $dadosOrganizados[$i] = explode('=', $queryString[$i]);
     }
-    $nomeProduto = str_replace('+', ' ', "'".$dadosOrganizados[0][1]."'");
-    $especificacoes = str_replace('+', ' ', "'".$dadosOrganizados[count($queryString)-1][1]."'");
+    $nomeProduto = "'".$_GET['nomeProduto']."'";
+    $especificacoes = "'".$_GET['especificacoes']."'";
 
     $query = $conexao->prepare("update produto
                                 set nome = $nomeProduto, especificacao = $especificacoes, status = 'cadastro'

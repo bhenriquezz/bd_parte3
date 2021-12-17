@@ -1,5 +1,7 @@
 <<?php
     include_once "conexao.php";
+    header('Content-Type: text/html; charset=UTF-8');
+    ini_set('default_charset', 'UTF-8');
 
     $queryString = explode('&', $_SERVER["QUERY_STRING"]);
     $dadosOrganizados;
@@ -7,8 +9,8 @@
     for($i = 0; $i < count($queryString); $i++) {
         $dadosOrganizados[$i] = explode('=', $queryString[$i]);
     }
-    $nomeProduto = str_replace('+', ' ', "'".$dadosOrganizados[0][1]."'");
-    $especificacoes = str_replace('+', ' ', "'".$dadosOrganizados[count($queryString)-1][1]."'");
+    $nomeProduto = "'".$_GET['nomeProduto']."'";
+    $especificacoes = "'".$_GET['especificacoes']."'";
 
     $query = $conexao->prepare("insert into produto(nome, especificacao, status)
                                 values($nomeProduto, $especificacoes, 'cadastro')");
@@ -33,4 +35,4 @@
         $query->execute();
     }
     
-    header("Location: index.php");
+    echo "<script>location.href='index.php'</script>";
